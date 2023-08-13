@@ -9,7 +9,6 @@ int main(void)
 {
 	char a;
 
-	a = 'a';
 	while (a = 'a'; a <= 'z')
 	{
 		if (a == 'q' || a == 'e')
