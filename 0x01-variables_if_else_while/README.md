@@ -8,3 +8,4 @@
 7. A program that prints the lowercase alphabet in reverse, followed by a new line.
 8. A  program that prints all possible combinations of single-digit numbers.
 9. a program that prints all possible combinations of single-digit numbers.
+100. a program that prints all possible different combinations of two digits.
