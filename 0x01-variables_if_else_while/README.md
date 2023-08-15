@@ -9,3 +9,4 @@
 8. A  program that prints all possible combinations of single-digit numbers.
 9. a program that prints all possible combinations of single-digit numbers.
 100. a program that prints all possible different combinations of two digits.
+101. a program that prints all possible different combinations of three digits.
