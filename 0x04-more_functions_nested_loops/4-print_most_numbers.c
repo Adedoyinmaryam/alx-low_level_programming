@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_numbers - print the numbers from 0 to 9
+ * print_most_numbers - print the numbers from 0 to 9
  * Description: You can only use _putchar twice
  */
 void print_most_numbers(void)
@@ -13,5 +13,6 @@ void print_most_numbers(void)
 		{
 			_putchar(i + '0');
 		}
-		_putchar('\n');
 	}
+	_putchar('\n');
+}
