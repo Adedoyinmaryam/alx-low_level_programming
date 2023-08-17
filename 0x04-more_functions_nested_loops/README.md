@@ -9,3 +9,4 @@
 8. A function that prints a square, followed by a new line.
 10. A  program that prints the numbers from 1 to 100, followed by a new line
 10. A function that prints a triangle, followed by a new line.
+102. a function that prints an integer.
