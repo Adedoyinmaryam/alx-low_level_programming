@@ -1,5 +1,10 @@
 #include "main.h"
 #include "2-strlen.c"
+/**
+ * print_rev - reverse a string
+ *
+ * @s: string to print
+ */
 void print_rev(char *s)
 {
 	int i;
