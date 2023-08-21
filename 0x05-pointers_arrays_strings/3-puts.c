@@ -6,8 +6,8 @@
  */
 void _puts(char *str)
 {
-	char str[] = {};
+	str[] = {};
 
-	puts(str);
+	_puts(str);
 	return (0);	
 }
