@@ -6,41 +6,29 @@
  *
  * Return: the resulting string
  */
-bool is_separator(charc)
-{
-	char separators[] = " \t\n,;.!?\"(){}";
-
-	for (int i = 0; separators[i] != '\0')
-	{
-		if (separators[i] == c)
-		{
-			return (true);
-		}
-	}
-	return (false);
-}
 char *cap_string(char *s)
 {
-	char *ptr = s;
-	bool new_word = true;
+int i, j;
 
-	while (*ptr != '\0')
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (is_separator(*ptr))
-		{
-			new_word = true;
-		}
-		else if (new_word && islower(*ptr))
-		{
-			*ptr = toupper(*ptr);
-			new_word = false;
-		}
-		else
-		{
-			new_word = false;
-		}
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
 
-		ptr++;
+		for (j = 0; j < 13; j++)
+		{
+			if (s[i] == spe[j])
+			{
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
+			}
+		}
 	}
+
 	return (s);
 }
