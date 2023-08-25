@@ -4,3 +4,4 @@
 3. A function that compares two strings.
 4. A function that reverses the content of an array of integers.
 5. A function that changes all lowercase letters of a string to uppercase.
+6. A function that capitalizes all words of a string.
