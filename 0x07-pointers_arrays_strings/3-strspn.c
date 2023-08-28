@@ -1,9 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strspn - Gets the length of a prefix substring.
- * @s: The string to be searched.
- * @accept: The string containing the characters to be matched.
+ * _strspn - length of prefix substring
+ * @s: string to go through
+ * @accept: accepted bytes
  * Return: returns usigned values
  */
 unsigned int _strspn(char *s, char *accept)
@@ -22,9 +22,8 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if (s[j] != '\0')
+		if (s[j] == '\0')
 			return (result);
 	}
 	return (result);
 }
-
