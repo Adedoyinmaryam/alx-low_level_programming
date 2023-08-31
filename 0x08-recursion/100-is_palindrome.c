@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * is_palindrome_helper - Helper function to check if a string is palindrome recursively.
  * @s: The input string.
