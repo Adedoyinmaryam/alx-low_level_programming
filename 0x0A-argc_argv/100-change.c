@@ -1,38 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
- * main - Entry point of the program
- * @argc: The number of command-line arguments
- * @argv: An array of strings containing the arguments
- *
- * Return: 0 for success, 1 for an error
+ * main - main function
+ * @argc: argumentc
+ * @argv: vector of arguments
+ *Return: always 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char  *argv[])
 {
-	int coin_values[] = {25, 10, 5, 2, 1};
-	int num_coins = sizeof(coin_values) / sizeof(coin_values[0]);
-	int coin_count = 0;
-	int i;
-	int cents = atoi(argv[1]);
+	int coins = 0;
 
-	if (argc != 2)
+	if (argc == 2)
 	{
-		printf("Error\n");
-		return (1);
-	}
-	if (cents < 0)
-	{
-		printf("0\n");
+		if (strchr(argv[argc - 1], '-'))
+		{
+			printf("0\n");
+			return (1);
+		}
+		int money;
+
+		money = atoi(argv[argc - 1]);
+
+		while (money > 0)
+		{
+			if (money % 25 == 0)
+			{
+				money -= 25;
+			} else if (money % 10 == 0)
+			{
+				money -= 10;
+			} else if (money % 5 == 0)
+			{
+				money -= 5;
+			} else if (money % 2 == 0)
+			{
+				money -= 2;
+			} else
+			{
+				money--;
+			}
+			coins++;
+		}
+		printf("%d\n", coins);
 		return (0);
 	}
-	for (int i = 0; i < num_coins; i++)
-	{
-		while (cents >= coin_values[i])
-		{
-			cents -= coin_values[i];
-			coin_count++;
-		}
-	}
-	printf("%d\n", coin_count);
-	return (0);
+	printf("Error\n");
+	return (1);
 }
