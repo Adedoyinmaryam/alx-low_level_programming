@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define UNUSED(x) (void)(x)
 /**
  * main - Entry point of the program
  * @argc: The number of command-line arguments
