@@ -1,46 +1,46 @@
 #include "main.h"
-#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 /**
- * argstostr - gives array of args
- * @ac: argument count
- * @av: array of arguments
- * Return: char value
+ * argstostr - Concatenates all program arguments into a single string.
+ * @ac: The number of arguments.
+ * @av: An array of argument strings.
+ *
+ * Return: On success, returns a pointer to the concatenated string.
+ *         Returns NULL if ac is 0, av is NULL, or if memory allocation fails.
  */
 char *argstostr(int ac, char **av)
 {
-	int size;
-	char *s;
-	int i;
-	int j;
-	int k;
-
 	if (ac == 0 || av == NULL)
-		return (NULL);
-
-	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-			size++;
+		return (NULL);
 	}
+	int total_length = 0;
+	int i, j;
+	char *result;
 
-	size += (ac + 1);
-	s = malloc(sizeof(char) * size);
-	if (s == NULL)
-		return (NULL);
-	k = 0;
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		if (av[i] != NULL)
 		{
-			s[k] = av[i][j];
-			k++;
+			total_length += strlen(av[i]) + 1;
 		}
-		s[k] = '\n';
-		k++;
 	}
-
-	s[k] = '\0';
-
-	return (s);
+	result = malloc(total_length * sizeof(char) + 1);
+	if (result == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0, j = 0; i < ac; i++)
+	{
+		if (av[i] != NULL)
+		{
+			strcpy(result + j, av[i]);
+			j += strlen(av[i]);
+			result[j] = '\n';
+			j++;
+		}
+	}
+	result[j] = '\0';
+	return (result);
 }
