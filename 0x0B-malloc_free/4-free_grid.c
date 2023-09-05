@@ -1,5 +1,5 @@
 #include "main.h"
-#include "3-alloc_grid.c"
+#include <stdio.h>
 #include <stdlib.h>
 /**
  * free_grid - Frees a 2D grid created by alloc_grid.
