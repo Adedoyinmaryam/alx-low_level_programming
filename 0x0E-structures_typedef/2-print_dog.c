@@ -5,11 +5,17 @@
  * print_dog - Prints the details of a struct dog
  * @d: Pointer to the struct dog to print
  */
+struct dog {
+	char *name;
+    	float age;
+    	char *owner;
+};
+
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
 	{
-		return (0);
+		return;
 	}
 	else
 	{
