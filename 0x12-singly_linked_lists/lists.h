@@ -1,15 +1,15 @@
 #ifndef LISTS_H
 #define LISTS_H
-
 #include <stddef.h>
-
+int _putchar(char c);
 /**
  * struct list_s - singly linked list
  * @str: string (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
  */
-typedef struct list_s {
+typedef struct list_s
+{
 	char *str;
 	int len;
 	struct list_s *next;
