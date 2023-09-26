@@ -1,9 +1,9 @@
 #ifndef LISTS_H
 #define LISTS_H
-
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stddef.h>
+int _putchar(char c);
 typedef struct listint_s
 {
 	int n;
