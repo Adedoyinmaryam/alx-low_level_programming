@@ -9,5 +9,9 @@ int get_endianness(void)
 	unsigned int result = 1;
 	unsigned char *byte = (unsigned char *)&result;
 
-	return ((byte[0] == 1) ? 1 : 0);
+	if (*byte == 1)
+	{
+		return (1);
+	}
+	return (0);
 }
