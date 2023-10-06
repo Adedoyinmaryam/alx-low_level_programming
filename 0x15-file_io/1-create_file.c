@@ -17,17 +17,13 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 	file = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	if (file == -1)
-	{
-		return (-1);
-	}
 	if (text_content != NULL)
 	{
-		for (nletters = 0; text_content[nletters++];)
-		nletters++;
+		for (rdr = 0; text_content[rdr++];)
+			rdr++;
 	}
-	rdr = write(file, text_content, nletters);
-	if (rdr == -1 || file == -1)
+	rdr = write(file, text_content, rdr);
+	if (file == -1 || nletters == -1)
 		return (-1);
 	close(file);
 
