@@ -8,24 +8,25 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file;
-	int nletters;
-	int rdr;
+	int opn;
+	int wrt;
+	int brd;
 
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	file = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (text_content != NULL)
 	{
-		for (rdr = 0; text_content[rdr++];)
-			rdr++;
+		for (brd = 0; text_content[brd];)
+			brd++;
 	}
-	rdr = write(file, text_content, rdr);
-	if (file == -1 || nletters == -1)
+	opn = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	wrt = write(opn, text_content, brd);
+	if (opn == -1 || wrt == -1)
 		return (-1);
-	close(file);
+
+	close(opn);
 
 	return (1);
 }
