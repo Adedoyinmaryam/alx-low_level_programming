@@ -21,14 +21,12 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content == NULL)
+	if (text_content != NULL)
 	{
-		text_content = "";
-	}
-	for (nletters = 0; text_content[nletters++];)
+		for (nletters = 0; text_content[nletters++];)
 		nletters++;
+	}
 	rdr = write(file, text_content, nletters);
-
 	if (rdr == -1 || nletters == -1)
 		return (-1);
 	close(file);
