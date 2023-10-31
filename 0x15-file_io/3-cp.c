@@ -1,15 +1,15 @@
 #include "main.h"
 #include <stdio.h>
-char *open_buff(char *file);
+char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * open_buff - check if file is open and handle errors
+ * create_buffer - check if file is open and handle errors
  * @file: name of file buff is storing chsrs for
  * Return: nothing
  */
 
-char *open_buff(char *file)
+char *create_buffer(char *file)
 {
 	char *buffer;
 
