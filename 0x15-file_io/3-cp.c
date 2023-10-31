@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-char *create_buffer(char *file);
+char *open_buff(char *file);
 void close_file(int fd);
 
 /**
@@ -9,7 +9,7 @@ void close_file(int fd);
  * Return: nothing
  */
 
-char *create_buffer(char *file)
+char *open_buff(char *file)
 {
 	char *buffer;
 
@@ -26,7 +26,7 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file: closes file
+ * close_file - closes file
  * @fdesc: file desriptor to be closed
  */
 
